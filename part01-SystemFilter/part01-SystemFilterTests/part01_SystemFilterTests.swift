@@ -1,9 +1,15 @@
-//___FILEHEADER___
+//
+//  part01_SystemFilterTests.swift
+//  part01-SystemFilterTests
+//
+//  Created by 詹保成 on 2018/12/5.
+//  Copyright © 2018 残无殇. All rights reserved.
+//
 
 import XCTest
-@testable import ___VARIABLE_productName:identifier___
+@testable import part01_SystemFilter
 
-class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
+class part01_SystemFilterTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

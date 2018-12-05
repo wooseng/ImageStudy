@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
     private let targetImageView = UIImageView.init()
     
     private func setImageView() {
-        guard let image = UIImage.init(named: "image_3.jpeg") else {
+        guard let image = UIImage.init(named: "image_\(arc4random() % 9 + 1).jpeg") else {
             return
         }
         let width = view.frame.width - 40
