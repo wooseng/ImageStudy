@@ -1,0 +1,11 @@
+platform :ios, '8.0'
+
+target 'part01-系统滤镜' do
+ use_frameworks!
+ inhibit_all_warnings!
+
+ pod 'SnapKit'
+ pod 'Kingfisher'
+ pod 'Hue'
+
+end

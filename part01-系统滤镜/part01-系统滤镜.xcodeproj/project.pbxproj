@@ -14,7 +14,10 @@
 		4C0D30D621B5F87F00E84BD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0D30D421B5F87F00E84BD5 /* LaunchScreen.storyboard */; };
 		4C0D30E121B5F87F00E84BD5 /* part01_____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D30E021B5F87F00E84BD5 /* part01_____Tests.swift */; };
 		4C0D30EC21B5F87F00E84BD5 /* part01_____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D30EB21B5F87F00E84BD5 /* part01_____UITests.swift */; };
+		4C2F4F2E21B81694002D30E4 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F4F2D21B81694002D30E4 /* FilterModel.swift */; };
+		4C2F4F3021B816CD002D30E4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F4F2F21B816CD002D30E4 /* DataManager.swift */; };
 		4C63279921B6B5C5008BBCED /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63279821B6B5C5008BBCED /* DetailViewController.swift */; };
+		F4F91E6406B57A8A96879724 /* Pods_part01_____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A494CE590F3E7ACB43DCCBD /* Pods_part01_____.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36A612654F83DCDA005F860F /* Pods-part01-系统滤镜.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-part01-系统滤镜.debug.xcconfig"; path = "Pods/Target Support Files/Pods-part01-系统滤镜/Pods-part01-系统滤镜.debug.xcconfig"; sourceTree = "<group>"; };
+		4A494CE590F3E7ACB43DCCBD /* Pods_part01_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_part01_____.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0D30C821B5F87E00E84BD5 /* part01-系统滤镜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "part01-系统滤镜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0D30CB21B5F87E00E84BD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C0D30CD21B5F87E00E84BD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,12 +48,15 @@
 		4C0D30D521B5F87F00E84BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C0D30D721B5F87F00E84BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C0D30DC21B5F87F00E84BD5 /* part01-系统滤镜Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "part01-系统滤镜Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C0D30E021B5F87F00E84BD5 /* part01_____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "part01_____Tests.swift"; sourceTree = "<group>"; };
+		4C0D30E021B5F87F00E84BD5 /* part01_____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = part01_____Tests.swift; sourceTree = "<group>"; };
 		4C0D30E221B5F87F00E84BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C0D30E721B5F87F00E84BD5 /* part01-系统滤镜UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "part01-系统滤镜UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C0D30EB21B5F87F00E84BD5 /* part01_____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "part01_____UITests.swift"; sourceTree = "<group>"; };
+		4C0D30EB21B5F87F00E84BD5 /* part01_____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = part01_____UITests.swift; sourceTree = "<group>"; };
 		4C0D30ED21B5F87F00E84BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2F4F2D21B81694002D30E4 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		4C2F4F2F21B816CD002D30E4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4C63279821B6B5C5008BBCED /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5C0EF997665C7CBB9000F472 /* Pods-part01-系统滤镜.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-part01-系统滤镜.release.xcconfig"; path = "Pods/Target Support Files/Pods-part01-系统滤镜/Pods-part01-系统滤镜.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F91E6406B57A8A96879724 /* Pods_part01_____.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +92,8 @@
 				4C0D30DF21B5F87F00E84BD5 /* part01-系统滤镜Tests */,
 				4C0D30EA21B5F87F00E84BD5 /* part01-系统滤镜UITests */,
 				4C0D30C921B5F87E00E84BD5 /* Products */,
+				724D186499356599A0BA766E /* Pods */,
+				71D5B73C8A9305E204528701 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +113,8 @@
 				4C0D30CB21B5F87E00E84BD5 /* AppDelegate.swift */,
 				4C0D30CD21B5F87E00E84BD5 /* ViewController.swift */,
 				4C63279821B6B5C5008BBCED /* DetailViewController.swift */,
+				4C2F4F2D21B81694002D30E4 /* FilterModel.swift */,
+				4C2F4F2F21B816CD002D30E4 /* DataManager.swift */,
 				4C0D30CF21B5F87E00E84BD5 /* Main.storyboard */,
 				4C0D30D221B5F87F00E84BD5 /* Assets.xcassets */,
 				4C0D30D421B5F87F00E84BD5 /* LaunchScreen.storyboard */,
@@ -128,6 +141,23 @@
 			path = "part01-系统滤镜UITests";
 			sourceTree = "<group>";
 		};
+		71D5B73C8A9305E204528701 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A494CE590F3E7ACB43DCCBD /* Pods_part01_____.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		724D186499356599A0BA766E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36A612654F83DCDA005F860F /* Pods-part01-系统滤镜.debug.xcconfig */,
+				5C0EF997665C7CBB9000F472 /* Pods-part01-系统滤镜.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C0D30F021B5F87F00E84BD5 /* Build configuration list for PBXNativeTarget "part01-系统滤镜" */;
 			buildPhases = (
+				500D0989E27C95D94BD6E0EE /* [CP] Check Pods Manifest.lock */,
 				4C0D30C421B5F87E00E84BD5 /* Sources */,
 				4C0D30C521B5F87E00E84BD5 /* Frameworks */,
 				4C0D30C621B5F87E00E84BD5 /* Resources */,
+				3799030C759390300B819832 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,14 +286,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3799030C759390300B819832 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-part01-系统滤镜/Pods-part01-系统滤镜-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-part01-系统滤镜/Pods-part01-系统滤镜-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		500D0989E27C95D94BD6E0EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-part01-系统滤镜-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4C0D30C421B5F87E00E84BD5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4C63279921B6B5C5008BBCED /* DetailViewController.swift in Sources */,
+				4C2F4F3021B816CD002D30E4 /* DataManager.swift in Sources */,
 				4C0D30CE21B5F87E00E84BD5 /* ViewController.swift in Sources */,
 				4C0D30CC21B5F87E00E84BD5 /* AppDelegate.swift in Sources */,
+				4C2F4F2E21B81694002D30E4 /* FilterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +511,7 @@
 		};
 		4C0D30F121B5F87F00E84BD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36A612654F83DCDA005F860F /* Pods-part01-系统滤镜.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -454,6 +532,7 @@
 		};
 		4C0D30F221B5F87F00E84BD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C0EF997665C7CBB9000F472 /* Pods-part01-系统滤镜.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
