@@ -17,8 +17,6 @@ class ViewController: UIViewController {
         setMainTableView()
     }
     
-    private var dataManager = DataManager()
-    
     private let dataSource: [(title: String, list: [String])] = [
         ("CICategoryBlur", ["CIBoxBlur", "CIDiscBlur", "CIGaussianBlur", "CIMaskedVariableBlur",
                             "CIMedianFilter", "CIMotionBlur", "CINoiseReduction", "CIZoomBlur"]),

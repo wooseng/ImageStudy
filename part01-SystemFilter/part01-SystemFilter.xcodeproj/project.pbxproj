@@ -13,10 +13,8 @@
 		4C67324C21B81B1F008DEC8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C67324A21B81B1F008DEC8A /* LaunchScreen.storyboard */; };
 		4C67325721B81B1F008DEC8A /* part01_SystemFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67325621B81B1F008DEC8A /* part01_SystemFilterTests.swift */; };
 		4C67326221B81B1F008DEC8A /* part01_SystemFilterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67326121B81B1F008DEC8A /* part01_SystemFilterUITests.swift */; };
-		4C67327E21B81CBD008DEC8A /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67327921B81CBD008DEC8A /* FilterModel.swift */; };
 		4C67327F21B81CBD008DEC8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67327A21B81CBD008DEC8A /* AppDelegate.swift */; };
 		4C67328021B81CBD008DEC8A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67327B21B81CBD008DEC8A /* DetailViewController.swift */; };
-		4C67328121B81CBD008DEC8A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67327C21B81CBD008DEC8A /* DataManager.swift */; };
 		4C67328221B81CBD008DEC8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67327D21B81CBD008DEC8A /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,10 +48,8 @@
 		4C67325D21B81B1F008DEC8A /* part01-SystemFilterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "part01-SystemFilterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C67326121B81B1F008DEC8A /* part01_SystemFilterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = part01_SystemFilterUITests.swift; sourceTree = "<group>"; };
 		4C67326321B81B1F008DEC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C67327921B81CBD008DEC8A /* FilterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		4C67327A21B81CBD008DEC8A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C67327B21B81CBD008DEC8A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		4C67327C21B81CBD008DEC8A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4C67327D21B81CBD008DEC8A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DFA11C60C2825956C67ECC56 /* Pods_part01_SystemFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_part01_SystemFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14FEF835357AB8DB66C1A74 /* Pods-part01-SystemFilter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-part01-SystemFilter.release.xcconfig"; path = "Pods/Target Support Files/Pods-part01-SystemFilter/Pods-part01-SystemFilter.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,10 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				4C67327A21B81CBD008DEC8A /* AppDelegate.swift */,
-				4C67327C21B81CBD008DEC8A /* DataManager.swift */,
-				4C67327B21B81CBD008DEC8A /* DetailViewController.swift */,
-				4C67327921B81CBD008DEC8A /* FilterModel.swift */,
 				4C67327D21B81CBD008DEC8A /* ViewController.swift */,
+				4C67327B21B81CBD008DEC8A /* DetailViewController.swift */,
 				4C67324521B81B1E008DEC8A /* Main.storyboard */,
 				4C67324821B81B1F008DEC8A /* Assets.xcassets */,
 				4C67324A21B81B1F008DEC8A /* LaunchScreen.storyboard */,
@@ -337,9 +331,7 @@
 			files = (
 				4C67328221B81CBD008DEC8A /* ViewController.swift in Sources */,
 				4C67328021B81CBD008DEC8A /* DetailViewController.swift in Sources */,
-				4C67328121B81CBD008DEC8A /* DataManager.swift in Sources */,
 				4C67327F21B81CBD008DEC8A /* AppDelegate.swift in Sources */,
-				4C67327E21B81CBD008DEC8A /* FilterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
