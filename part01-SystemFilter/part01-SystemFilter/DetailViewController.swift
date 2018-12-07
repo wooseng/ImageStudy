@@ -39,7 +39,14 @@ class DetailViewController: UIViewController {
     private let titleColor = UIColor.init(hex: "#333333")
     
     /// 滤镜的相关信息
-    private let infoLabel = UILabel.init()
+    private var filterNameLabel = UILabel.init()
+    private var filterDisplayNameLabel = UILabel.init()
+    private var filterAvailableMacLabel = UILabel.init()
+    private var filterAvailableiOSLabel = UILabel.init()
+    private var filterCategoriesLabel = UILabel.init()
+    private var filterInputKeysLabel = UILabel.init()
+    private var filterOutputKeysLabel = UILabel.init()
+    private var filterReferenceDocumentationLabel = UILabel.init()
     
     /// 官方效果图
     private let officialImageView = UIImageView.init()
@@ -58,7 +65,13 @@ class DetailViewController: UIViewController {
                     return
             }
             filter.setValue(ciimage, forKey: kCIInputImageKey)
-            self.showFilterInfo(with: filter)
+            if Thread.current.isMainThread {
+                self.showFilterInfo(with: filter);
+            } else {
+                DispatchQueue.main.async {
+                    self.showFilterInfo(with: filter);
+                }
+            }
             let context = CIContext.init(options: nil)
             guard let outputImage = filter.outputImage,
                 let cgimage = context.createCGImage(outputImage, from: outputImage.extent) else {
@@ -72,42 +85,26 @@ class DetailViewController: UIViewController {
     }
     
     private func showFilterInfo(with filter: CIFilter) {
-        var infoStr = ""
-        infoStr.append(contentsOf: "滤镜名: \(filter.name)\n")
+        filterNameLabel.text = filter.name
         
         let attributes = filter.attributes
         if let displayName = attributes["CIAttributeFilterDisplayName"] as? String {
-            infoStr.append(contentsOf: "displayName: \(displayName)\n")
+            filterDisplayNameLabel.text = displayName
         }
         if let available_Mac = attributes["CIAttributeFilterAvailable_Mac"] /* 最低Mac OS版本 */ {
-            infoStr.append(contentsOf: "最低Mac OS版本: \(available_Mac)\n")
+            filterAvailableMacLabel.text = "\(available_Mac)"
         }
         if let available_iOS = attributes["CIAttributeFilterAvailable_iOS"] /* 最低iOS版本 */ {
-            infoStr.append(contentsOf: "最低iOS版本: \(available_iOS)\n")
+            filterAvailableiOSLabel.text = "\(available_iOS)"
         }
         if let categories = attributes["CIAttributeFilterCategories"] as? [String] {
-            let str = categories.joined(separator: ", ")
-            infoStr.append(contentsOf: "分类: \(str)\n")
+            filterCategoriesLabel.text = categories.joined(separator: "\n")
         }
-        let inputKeys = filter.inputKeys.joined(separator: ", ")
-        let outputKeys = filter.outputKeys.joined(separator: ", ")
-        infoStr.append(contentsOf: "输入参数名: \(inputKeys)\n")
-        infoStr.append(contentsOf: "输出参数名: \(outputKeys)\n")
+        filterInputKeysLabel.text = filter.inputKeys.joined(separator: "\n")
+        filterOutputKeysLabel.text = filter.outputKeys.joined(separator: "\n")
         if let referenceDocumentation = attributes["CIAttributeReferenceDocumentation"] /* 文档地址 */ {
-            infoStr.append(contentsOf: "文档地址: \(referenceDocumentation)")
+            filterReferenceDocumentationLabel.text = "\(referenceDocumentation)"
         }
-        let para = NSMutableParagraphStyle.init()
-        para.lineSpacing = 5
-        let attr = NSMutableAttributedString.init(string: infoStr)
-        attr.addAttribute(.paragraphStyle, value: para, range: .init(location: 0, length: attr.length))
-        if Thread.current.isMainThread {
-            infoLabel.attributedText = attr
-        } else {
-            DispatchQueue.main.async {
-                self.infoLabel.attributedText = attr
-            }
-        }
-        
     }
 }
 
@@ -146,13 +143,78 @@ extension DetailViewController {
             maker.right.equalTo(-20)
         }
         
-        infoLabel.font = UIFont.systemFont(ofSize: 14)
-        infoLabel.textColor = UIColor.init(hex: "#666666")
-        infoLabel.numberOfLines = 0
-        contentView.addSubview(infoLabel)
-        infoLabel.snp.makeConstraints { (maker) in
-            maker.left.right.equalTo(infoTitleLabel)
-            maker.top.equalTo(infoTitleLabel.snp.bottom).offset(10)
+        var filterNameTitleLabel = UILabel.init()
+        setInfoTitleLabel(&filterNameTitleLabel, title: "滤镜名: ", topView: infoTitleLabel)
+        setInfoDescLabel(&filterNameLabel, leftView: filterNameTitleLabel)
+        
+        var filterDisplayNameTitleLabel = UILabel.init()
+        setInfoTitleLabel(&filterDisplayNameTitleLabel, title: "DisplayName: ", topView: filterNameLabel)
+        setInfoDescLabel(&filterDisplayNameLabel, leftView: filterDisplayNameTitleLabel)
+        
+        var filterAvailableMacTitleLabel = UILabel.init()
+        setInfoTitleLabel(&filterAvailableMacTitleLabel, title: "最低Mac OS版本: ", topView: filterDisplayNameLabel)
+        setInfoDescLabel(&filterAvailableMacLabel, leftView: filterAvailableMacTitleLabel)
+        
+        var filterAvailableiOSTitleLabel = UILabel.init()
+        setInfoTitleLabel(&filterAvailableiOSTitleLabel, title: "最低iOS版本: ", topView: filterAvailableMacLabel)
+        setInfoDescLabel(&filterAvailableiOSLabel, leftView: filterAvailableiOSTitleLabel)
+        
+        var filterCategoriesTitleLabel = UILabel.init()
+        setInfoTitleLabel(&filterCategoriesTitleLabel, title: "所属分类: ", topView: filterAvailableiOSLabel)
+        setInfoDescLabel(&filterCategoriesLabel, leftView: filterCategoriesTitleLabel)
+        
+        var filterInputKeysTitleLabel = UILabel.init()
+        setInfoTitleLabel(&filterInputKeysTitleLabel, title: "InputKeys: ", topView: filterCategoriesLabel)
+        setInfoDescLabel(&filterInputKeysLabel, leftView: filterInputKeysTitleLabel)
+        
+        var filterOutputKeysTitleLabel = UILabel.init()
+        setInfoTitleLabel(&filterOutputKeysTitleLabel, title: "OutputKeys: ", topView: filterInputKeysLabel)
+        setInfoDescLabel(&filterOutputKeysLabel, leftView: filterOutputKeysTitleLabel)
+        
+        var filterReferenceDocumentationTitleLabel = UILabel.init()
+        setInfoTitleLabel(&filterReferenceDocumentationTitleLabel, title: "官方文档: ", topView: filterOutputKeysLabel)
+        setInfoDescLabel(&filterReferenceDocumentationLabel, leftView: filterReferenceDocumentationTitleLabel)
+        filterReferenceDocumentationLabel.isUserInteractionEnabled = true
+        filterReferenceDocumentationLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(openDocument)))
+    }
+    
+    private func setInfoTitleLabel(_ label: inout UILabel, title: String, topView: UIView) {
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textColor = UIColor.init(hex: "#333333")
+        label.text = title
+        contentView.addSubview(label)
+        label.snp.makeConstraints { (maker) in
+            maker.left.equalTo(20)
+            maker.top.equalTo(topView.snp.bottom).offset(5)
+            maker.height.equalTo(20)
+            maker.width.equalTo(120)
+        }
+    }
+    
+    private func setInfoDescLabel(_ label: inout UILabel, leftView: UIView) {
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = UIColor.init(hex: "#666666")
+        label.numberOfLines = 0
+        contentView.addSubview(label)
+        label.snp.makeConstraints { (maker) in
+            maker.left.equalTo(leftView.snp.right).offset(5)
+            maker.top.equalTo(leftView)
+            maker.right.equalTo(-20)
+            maker.height.greaterThanOrEqualTo(leftView.snp.height)
+        }
+    }
+    
+    /// 打开官方文档
+    @objc private func openDocument() {
+        guard let urlStr = filterReferenceDocumentationLabel.text,
+            let url = URL.init(string: urlStr),
+            UIApplication.shared.canOpenURL(url) else {
+                return
+        }
+        if #available(iOS 10, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
         }
     }
     
@@ -163,8 +225,9 @@ extension DetailViewController {
         officialImageTitleLabel.text = "官方效果"
         contentView.addSubview(officialImageTitleLabel)
         officialImageTitleLabel.snp.makeConstraints { (maker) in
-            maker.left.right.equalTo(infoLabel)
-            maker.top.equalTo(infoLabel.snp.bottom).offset(20)
+            maker.left.equalTo(20)
+            maker.right.equalTo(filterReferenceDocumentationLabel)
+            maker.top.equalTo(filterReferenceDocumentationLabel.snp.bottom).offset(20)
         }
         
         officialImageView.backgroundColor = UIColor.init(hex: "#F0F0F0")
