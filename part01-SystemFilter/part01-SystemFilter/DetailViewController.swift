@@ -16,21 +16,26 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        setSettingButton()
         setScrollView()
         setInfoLabel()
         setOfficialImageView()
         setSourceImageView()
         setTargetImageView()
+        outputFilterImage()
+        setOfficialImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = filterName
-        setOfficialImage()
-        self.outputFilterImage()
     }
     
     var filterName: String?
+    
+    /// 滤镜正在处理
+    private var isFiltering = false
+    private var inputValues = [(key: String, value: Any?)]()
     
     private let scrollView = UIScrollView.init()
     private let contentView = UIView.init()
@@ -58,13 +63,20 @@ class DetailViewController: UIViewController {
         guard let image = sourceImageView.image  else {
             return
         }
+        let inputKeys = inputValues
         DispatchQueue.global().async {
             guard let filterName = self.filterName,
                 let ciimage = CIImage.init(image: image),
                 let filter = CIFilter.init(name: filterName) else {
                     return
             }
+            self.isFiltering = true
             filter.setValue(ciimage, forKey: kCIInputImageKey)
+            for item in inputKeys {
+                if item.key != kCIInputImageKey {
+                    filter.setValue(item.value, forKey: item.key)
+                }
+            }
             if Thread.current.isMainThread {
                 self.showFilterInfo(with: filter);
             } else {
@@ -75,11 +87,13 @@ class DetailViewController: UIViewController {
             let context = CIContext.init(options: nil)
             guard let outputImage = filter.outputImage,
                 let cgimage = context.createCGImage(outputImage, from: outputImage.extent) else {
+                    self.isFiltering = false
                     return
             }
             let img = UIImage.init(cgImage: cgimage)
             DispatchQueue.main.async {
                 self.targetImageView.image = img
+                self.isFiltering = false
             }
         }
     }
@@ -101,13 +115,17 @@ class DetailViewController: UIViewController {
             filterCategoriesLabel.text = categories.joined(separator: "\n")
         }
         var inputkeys = filter.inputKeys
+        inputValues.removeAll()
         inputkeys = inputkeys.map { (key) -> String in
             if key == kCIInputImageKey || key.contains("Image") {
+                inputValues.append((key, nil))
                 return key
             }
             if let value = filter.value(forKey: key) {
+                inputValues.append((key, value))
                 return "\(key): \(value)"
             }
+            inputValues.append((key, nil))
             return key
         }
         filterInputKeysLabel.text = inputkeys.joined(separator: "\n")
@@ -124,6 +142,33 @@ extension DetailViewController {
         let alert = UIAlertController.init(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "确定", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func setSettingButton() {
+        let settingBtn = UIButton.init(frame: .init(x: 0, y: 0, width: 50, height: 44))
+        settingBtn.setTitle("设置", for: .normal)
+        settingBtn.setTitleColor(UIColor.init(hex: "#999999"), for: .normal)
+        settingBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        settingBtn.addTarget(self, action: #selector(settingButtonClick), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: settingBtn)
+    }
+    
+    @objc private func settingButtonClick() {
+        guard !isFiltering else {
+            showAlert("滤镜正在处理中")
+            return
+        }
+        guard inputValues.count > 1 else {
+            showAlert("没有可以设置的属性")
+            return
+        }
+        let vc = SettingViewController()
+        vc.inputValues = inputValues
+        vc.saveComplete = { [weak self](values) in
+            self?.inputValues = values
+            self?.outputFilterImage()
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func setScrollView() {

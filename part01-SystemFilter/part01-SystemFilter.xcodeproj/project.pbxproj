@@ -16,6 +16,8 @@
 		4C67327F21B81CBD008DEC8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67327A21B81CBD008DEC8A /* AppDelegate.swift */; };
 		4C67328021B81CBD008DEC8A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67327B21B81CBD008DEC8A /* DetailViewController.swift */; };
 		4C67328221B81CBD008DEC8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C67327D21B81CBD008DEC8A /* ViewController.swift */; };
+		4CEEFC0221BB9B9D00B113D4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEFC0121BB9B9D00B113D4 /* SettingViewController.swift */; };
+		4CEEFC0621BBB15800B113D4 /* SettingSilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEFC0521BBB15800B113D4 /* SettingSilderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		4C67327A21B81CBD008DEC8A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C67327B21B81CBD008DEC8A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4C67327D21B81CBD008DEC8A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CEEFC0121BB9B9D00B113D4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4CEEFC0521BBB15800B113D4 /* SettingSilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSilderViewController.swift; sourceTree = "<group>"; };
 		DFA11C60C2825956C67ECC56 /* Pods_part01_SystemFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_part01_SystemFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14FEF835357AB8DB66C1A74 /* Pods-part01-SystemFilter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-part01-SystemFilter.release.xcconfig"; path = "Pods/Target Support Files/Pods-part01-SystemFilter/Pods-part01-SystemFilter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +122,8 @@
 				4C67327A21B81CBD008DEC8A /* AppDelegate.swift */,
 				4C67327D21B81CBD008DEC8A /* ViewController.swift */,
 				4C67327B21B81CBD008DEC8A /* DetailViewController.swift */,
+				4CEEFC0121BB9B9D00B113D4 /* SettingViewController.swift */,
+				4CEEFC0521BBB15800B113D4 /* SettingSilderViewController.swift */,
 				4C67324521B81B1E008DEC8A /* Main.storyboard */,
 				4C67324821B81B1F008DEC8A /* Assets.xcassets */,
 				4C67324A21B81B1F008DEC8A /* LaunchScreen.storyboard */,
@@ -329,9 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEEFC0621BBB15800B113D4 /* SettingSilderViewController.swift in Sources */,
 				4C67328221B81CBD008DEC8A /* ViewController.swift in Sources */,
 				4C67328021B81CBD008DEC8A /* DetailViewController.swift in Sources */,
 				4C67327F21B81CBD008DEC8A /* AppDelegate.swift in Sources */,
+				4CEEFC0221BB9B9D00B113D4 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T835WRSBN8;
 				INFOPLIST_FILE = "part01-SystemFilter/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -534,7 +542,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T835WRSBN8;
 				INFOPLIST_FILE = "part01-SystemFilter/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
