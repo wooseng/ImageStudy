@@ -100,7 +100,17 @@ class DetailViewController: UIViewController {
         if let categories = attributes["CIAttributeFilterCategories"] as? [String] {
             filterCategoriesLabel.text = categories.joined(separator: "\n")
         }
-        filterInputKeysLabel.text = filter.inputKeys.joined(separator: "\n")
+        var inputkeys = filter.inputKeys
+        inputkeys = inputkeys.map { (key) -> String in
+            if key == kCIInputImageKey || key.contains("Image") {
+                return key
+            }
+            if let value = filter.value(forKey: key) {
+                return "\(key): \(value)"
+            }
+            return key
+        }
+        filterInputKeysLabel.text = inputkeys.joined(separator: "\n")
         filterOutputKeysLabel.text = filter.outputKeys.joined(separator: "\n")
         if let referenceDocumentation = attributes["CIAttributeReferenceDocumentation"] /* 文档地址 */ {
             filterReferenceDocumentationLabel.text = "\(referenceDocumentation)"
