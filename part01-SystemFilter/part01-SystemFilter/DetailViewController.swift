@@ -146,7 +146,7 @@ extension DetailViewController {
     
     private func setSettingButton() {
         let settingBtn = UIButton.init(frame: .init(x: 0, y: 0, width: 50, height: 44))
-        settingBtn.setTitle("设置", for: .normal)
+        settingBtn.setTitle("实时预览", for: .normal)
         settingBtn.setTitleColor(UIColor.init(hex: "#999999"), for: .normal)
         settingBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         settingBtn.addTarget(self, action: #selector(settingButtonClick), for: .touchUpInside)
@@ -154,20 +154,13 @@ extension DetailViewController {
     }
     
     @objc private func settingButtonClick() {
-        guard !isFiltering else {
-            showAlert("滤镜正在处理中")
+        guard inputValues.count > 1, let image = sourceImageView.image, let name = filterName else {
+            showAlert("无法开启实时预览")
             return
         }
-        guard inputValues.count > 1 else {
-            showAlert("没有可以设置的属性")
-            return
-        }
-        let vc = SettingViewController()
-        vc.inputValues = inputValues
-        vc.saveComplete = { [weak self](values) in
-            self?.inputValues = values
-            self?.outputFilterImage()
-        }
+        let vc = RealTimePreviewViewController()
+        vc.sourceImage = image
+        vc.filterName = name
         navigationController?.pushViewController(vc, animated: true)
     }
     

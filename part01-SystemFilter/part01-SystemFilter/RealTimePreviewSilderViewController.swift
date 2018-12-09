@@ -10,7 +10,7 @@
 
 import UIKit
 
-class SettingSilderViewController: UIViewController {
+class RealTimePreviewSilderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
