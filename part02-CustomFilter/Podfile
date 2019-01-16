@@ -1,0 +1,10 @@
+platform :ios, '8.0'
+
+target 'part02-CustomFilter' do
+ use_frameworks!
+ inhibit_all_warnings!
+
+ pod 'SnapKit'
+ pod 'Hue'
+
+end

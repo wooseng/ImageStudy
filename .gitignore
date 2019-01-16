@@ -68,3 +68,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 part01-SystemFilter/Pods/
+part02-CustomFilter/Pods/
