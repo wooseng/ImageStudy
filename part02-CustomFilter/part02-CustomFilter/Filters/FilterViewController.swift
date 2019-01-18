@@ -13,8 +13,10 @@ class FilterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        addSwitchButton()
         setSourceImageView()
         setTargetImageView()
+        setStatusLabel()
         showFilterImage()
     }
     
@@ -27,8 +29,17 @@ class FilterViewController: UIViewController {
     
     private let sourceImageView = UIImageView.init()
     private let targetImageView = UIImageView.init()
+    private let statueLabel = UILabel.init()
+    private let switchButton = UIButton.init()
     
     private let context = CIContext.init(options: nil)
+    
+    private var isShowTarget = false {
+        didSet {
+            targetImageView.isHidden = !isShowTarget
+            statueLabel.text = isShowTarget ? "效果图" : "原图"
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         showFilterImage()
@@ -49,20 +60,22 @@ extension FilterViewController {
         targetImageView.image = resultImage
     }
     
+    private func addSwitchButton() {
+        switchButton.setTitle("切换", for: .normal)
+        switchButton.setTitleColor(UIColor(hex: "#333333"), for: .normal)
+        switchButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        switchButton.addTarget(self, action: #selector(switchButtonEvent), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: switchButton)
+    }
+    
+    @objc private func switchButtonEvent() {
+        isShowTarget = !isShowTarget
+    }
+    
     private func setSourceImageView() {
         guard let image = UIImage.init(named: "image_8.jpeg") else {
             return
         }
-        
-        let top = UIApplication.shared.statusBarFrame.height + (navigationController?.navigationBar.frame.height ?? 0) + 20
-        let titleLabel = getTitleLabel(with: "原图")
-        view.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (maker) in
-            maker.left.equalTo(20)
-            maker.right.equalTo(-20)
-            maker.top.equalTo(top)
-        }
-        
         sourceImageView.image = image
         sourceImageView.backgroundColor = UIColor.init(hex: "#F0F0F0")
         view.addSubview(sourceImageView)
@@ -70,34 +83,29 @@ extension FilterViewController {
         sourceImageView.snp.makeConstraints { (maker) in
             maker.left.equalTo(20)
             maker.right.equalTo(-20)
-            maker.top.equalTo(titleLabel.snp.bottom).offset(10)
+            maker.centerY.equalTo(view.snp.centerY)
             maker.height.equalTo(sourceImageView.snp.width).multipliedBy(scale)
         }
     }
     
     private func setTargetImageView() {
-        let titleLabel = getTitleLabel(with: "效果图")
-        view.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (maker) in
-            maker.left.equalTo(20)
-            maker.right.equalTo(-20)
-            maker.top.equalTo(sourceImageView.snp.bottom).offset(50)
-        }
-        
+        targetImageView.isHidden = true
         targetImageView.backgroundColor = UIColor.init(hex: "#F0F0F0")
         view.addSubview(targetImageView)
         targetImageView.snp.makeConstraints { (maker) in
-            maker.left.right.height.equalTo(sourceImageView)
-            maker.top.equalTo(titleLabel.snp.bottom).offset(10)
+            maker.left.right.height.centerY.equalTo(sourceImageView)
         }
     }
     
-    private func getTitleLabel(with title: String) -> UILabel {
-        let titleLabel = UILabel.init()
-        titleLabel.text = title
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
-        titleLabel.textColor = UIColor.init(hex: "#333333")
-        titleLabel.textAlignment = .center
-        return titleLabel
+    private func setStatusLabel() {
+        statueLabel.textColor = UIColor(hex: "#333333")
+        statueLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        statueLabel.text = "原图"
+        statueLabel.textAlignment = .center
+        view.addSubview(statueLabel)
+        statueLabel.snp.makeConstraints { (maker) in
+            maker.left.right.equalTo(0)
+            maker.bottom.equalTo(sourceImageView.snp.top).offset(-20)
+        }
     }
 }
