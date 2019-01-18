@@ -17,6 +17,9 @@
 		4C46B49621EF213800CE8638 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46B49521EF213800CE8638 /* FilterViewController.swift */; };
 		4C46B49821EF21FA00CE8638 /* MirrorFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46B49721EF21FA00CE8638 /* MirrorFilterViewController.swift */; };
 		4C46B49A21EF2DD500CE8638 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46B49921EF2DD500CE8638 /* Filter.swift */; };
+		4CCF4F2E21F2217B00077CA0 /* VignetteFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF4F2D21F2217B00077CA0 /* VignetteFilter.swift */; };
+		4CCF4F3021F221C300077CA0 /* VignetteFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF4F2F21F221C300077CA0 /* VignetteFilterViewController.swift */; };
+		4CCF4F3221F221E800077CA0 /* Vignette.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 4CCF4F3121F221E800077CA0 /* Vignette.cikernel */; };
 		A8F8098C3AC5348127BED23B /* Pods_part02_CustomFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60DFA9BA3B65DA6398B664D6 /* Pods_part02_CustomFilter.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,9 @@
 		4C46B49521EF213800CE8638 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		4C46B49721EF21FA00CE8638 /* MirrorFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorFilterViewController.swift; sourceTree = "<group>"; };
 		4C46B49921EF2DD500CE8638 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		4CCF4F2D21F2217B00077CA0 /* VignetteFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VignetteFilter.swift; sourceTree = "<group>"; };
+		4CCF4F2F21F221C300077CA0 /* VignetteFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VignetteFilterViewController.swift; sourceTree = "<group>"; };
+		4CCF4F3121F221E800077CA0 /* Vignette.cikernel */ = {isa = PBXFileReference; lastKnownFileType = text; path = Vignette.cikernel; sourceTree = "<group>"; };
 		60DFA9BA3B65DA6398B664D6 /* Pods_part02_CustomFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_part02_CustomFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABBCD74E0574E7DA6159FD2 /* Pods-part02-CustomFilter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-part02-CustomFilter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-part02-CustomFilter/Pods-part02-CustomFilter.debug.xcconfig"; sourceTree = "<group>"; };
 		A904B4FE83AB2932B7481745 /* Pods-part02-CustomFilter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-part02-CustomFilter.release.xcconfig"; path = "Pods/Target Support Files/Pods-part02-CustomFilter/Pods-part02-CustomFilter.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 			children = (
 				4CCF4F2B21F220A500077CA0 /* Base */,
 				4C46B49421EF20FB00CE8638 /* Mirror */,
+				4CCF4F2C21F2214D00077CA0 /* Vignette */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -117,6 +124,16 @@
 				4C46B49521EF213800CE8638 /* FilterViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		4CCF4F2C21F2214D00077CA0 /* Vignette */ = {
+			isa = PBXGroup;
+			children = (
+				4CCF4F3121F221E800077CA0 /* Vignette.cikernel */,
+				4CCF4F2D21F2217B00077CA0 /* VignetteFilter.swift */,
+				4CCF4F2F21F221C300077CA0 /* VignetteFilterViewController.swift */,
+			);
+			path = Vignette;
 			sourceTree = "<group>";
 		};
 		C4834A86CF1B9E69E7009BA5 /* Frameworks */ = {
@@ -187,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCF4F3221F221E800077CA0 /* Vignette.cikernel in Resources */,
 				4C46B48821EF0FA700CE8638 /* LaunchScreen.storyboard in Resources */,
 				4C46B48521EF0FA700CE8638 /* Assets.xcassets in Resources */,
 				4C46B49121EF162D00CE8638 /* Mirror.cikernel in Resources */,
@@ -242,9 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCF4F3021F221C300077CA0 /* VignetteFilterViewController.swift in Sources */,
 				4C46B48021EF0FA600CE8638 /* ViewController.swift in Sources */,
 				4C46B49A21EF2DD500CE8638 /* Filter.swift in Sources */,
 				4C46B49321EF16E100CE8638 /* MirrorFilter.swift in Sources */,
+				4CCF4F2E21F2217B00077CA0 /* VignetteFilter.swift in Sources */,
 				4C46B49821EF21FA00CE8638 /* MirrorFilterViewController.swift in Sources */,
 				4C46B49621EF213800CE8638 /* FilterViewController.swift in Sources */,
 				4C46B47E21EF0FA600CE8638 /* AppDelegate.swift in Sources */,

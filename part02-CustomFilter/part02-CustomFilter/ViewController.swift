@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     private let tableView = UITableView.init(frame: .zero, style: .grouped)
     
-    private var dataSource: [FilterType] = [.mirror]
+    private var dataSource: [FilterType] = [.mirror, .vignette]
 }
 
 extension ViewController {
@@ -76,10 +76,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         switch type {
         case .mirror:
             navigationController?.pushViewController(MirrorFilterViewController(), animated: true)
+        case .vignette:
+            navigationController?.pushViewController(VignetteFilterViewController(), animated: true)
         }
     }
 }
 
 fileprivate enum FilterType: String {
     case mirror = "图像翻转，可沿X轴、Y轴、中心点翻转"
+    case vignette = "图像光晕"
 }

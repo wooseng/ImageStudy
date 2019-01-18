@@ -27,6 +27,8 @@ class FilterViewController: UIViewController {
         fatalError("this method must be overwrite in sub class")
     }
     
+    public private(set) var sourceImage: UIImage?
+    
     private let sourceImageView = UIImageView.init()
     private let targetImageView = UIImageView.init()
     private let statueLabel = UILabel.init()
@@ -41,9 +43,6 @@ class FilterViewController: UIViewController {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        showFilterImage()
-    }
 }
 
 
@@ -76,6 +75,7 @@ extension FilterViewController {
         guard let image = UIImage.init(named: "image_8.jpeg") else {
             return
         }
+        sourceImage = image
         sourceImageView.image = image
         sourceImageView.backgroundColor = UIColor.init(hex: "#F0F0F0")
         view.addSubview(sourceImageView)

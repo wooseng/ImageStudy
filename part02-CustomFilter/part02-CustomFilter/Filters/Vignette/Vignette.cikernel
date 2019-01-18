@@ -1,0 +1,14 @@
+
+kernel vec4 vignetteKernel(__sample image, vec2 center, float radius, float alpha) {
+
+    /* 计算当前要处理的点与中心点的距离 */
+    float dist = distance(destCoord(), center);
+
+    /* 根据距离计算暗淡程度 */
+    float darken = 1.0 - dist / radius * alpha;
+
+    /* 计算当前处理的像素点的色值 */
+    image.rgb *= darken;
+
+    return image.rgba;
+}
