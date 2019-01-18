@@ -94,8 +94,7 @@
 		4C46B48F21EF161200CE8638 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				4C46B49921EF2DD500CE8638 /* Filter.swift */,
-				4C46B49521EF213800CE8638 /* FilterViewController.swift */,
+				4CCF4F2B21F220A500077CA0 /* Base */,
 				4C46B49421EF20FB00CE8638 /* Mirror */,
 			);
 			path = Filters;
@@ -109,6 +108,15 @@
 				4C46B49721EF21FA00CE8638 /* MirrorFilterViewController.swift */,
 			);
 			path = Mirror;
+			sourceTree = "<group>";
+		};
+		4CCF4F2B21F220A500077CA0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4C46B49921EF2DD500CE8638 /* Filter.swift */,
+				4C46B49521EF213800CE8638 /* FilterViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		C4834A86CF1B9E69E7009BA5 /* Frameworks */ = {
