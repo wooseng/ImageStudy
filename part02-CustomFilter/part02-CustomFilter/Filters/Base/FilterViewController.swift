@@ -12,11 +12,16 @@ class FilterViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let image = UIImage.init(named: "image_8.jpeg") else {
+            fatalError("image load failed")
+        }
+        sourceImage = image
+        
         addSwitchButton()
         setSourceImageView()
         setTargetImageView()
         setStatusLabel()
-        showFilterImage()
+        startDealImage(isChainEnable: false)
     }
     
     //MARK: - public
@@ -27,14 +32,16 @@ class FilterViewController: BaseViewController {
         fatalError("this method must be overwrite in sub class")
     }
     
-    public private(set) var sourceImage: UIImage?
+    public private(set) var sourceImage: UIImage!
+    public var targetImage: CIImage?
+    
+    public let targetImageView = UIImageView.init()
+    
     
     //MARK: - private
     private let sourceImageView = UIImageView.init()
-    private let targetImageView = UIImageView.init()
     private let statueLabel = UILabel.init()
     private let switchButton = UIButton.init()
-    private let context = CIContext.init(options: nil)
     
     private var isShowTarget = false {
         didSet {
@@ -49,15 +56,19 @@ class FilterViewController: BaseViewController {
 //MARK: - public
 extension FilterViewController {
     
-    public func showFilterImage() {
-        guard let image = sourceImageView.image,
-            let inputImage = CIImage.init(image: image),
-            let outputImage = dealImage(inputImage),
-            let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else {
-                return
+    /// 开始处理图片
+    ///
+    /// - Parameter isChainEnable: 是否采用链式滤镜
+    public final func startDealImage(isChainEnable: Bool) {
+        var image = CIImage.init(image: sourceImage)
+        if isChainEnable, targetImage != nil {
+            image = targetImage
         }
-        let resultImage = UIImage.init(cgImage: cgImage)
-        targetImageView.image = resultImage
+        guard let inputImage = image, let outputImage = dealImage(inputImage) else {
+            return
+        }
+        targetImage = outputImage
+        targetImageView.image = UIImage(ciImage: outputImage)
     }
 }
 
@@ -77,14 +88,11 @@ extension FilterViewController {
     }
     
     private func setSourceImageView() {
-        guard let image = UIImage.init(named: "image_8.jpeg") else {
-            return
-        }
-        sourceImage = image
-        sourceImageView.image = image
+        sourceImageView.image = sourceImage
         sourceImageView.backgroundColor = UIColor.init(hex: "#F0F0F0")
+        sourceImageView.contentMode = .scaleAspectFit
         view.addSubview(sourceImageView)
-        let scale = image.size.height / image.size.width
+        let scale = sourceImage.size.height / sourceImage.size.width
         sourceImageView.snp.makeConstraints { (maker) in
             maker.left.equalTo(20)
             maker.right.equalTo(-20)
@@ -96,6 +104,7 @@ extension FilterViewController {
     private func setTargetImageView() {
         targetImageView.isHidden = true
         targetImageView.backgroundColor = UIColor.init(hex: "#F0F0F0")
+        targetImageView.contentMode = .scaleAspectFit
         view.addSubview(targetImageView)
         targetImageView.snp.makeConstraints { (maker) in
             maker.left.right.height.centerY.equalTo(sourceImageView)

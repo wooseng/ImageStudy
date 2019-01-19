@@ -43,7 +43,7 @@ class PixellateFilterViewController: FilterViewController {
     
     @objc private func radiusSliderDidValueChange() {
         radius = CGFloat(radiusSlider.value)
-        showFilterImage()
+        startDealImage(isChainEnable: false)
     }
     
 }

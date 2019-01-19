@@ -1,0 +1,16 @@
+
+kernel vec4 mosaicKernel(sampler image, sampler maskImage, vec2 point, float radius, float maskWidth, float maskHeight) {
+
+    vec2 current = destCoord();
+    float dist = distance(current, point);
+    if (dist < radius) {
+        float x = mod(current.x, maskWidth);
+        float y = mod(current.y, maskHeight);
+        vec2 p = samplerTransform(maskImage, vec2(x, y));
+        return sample(maskImage, p);
+    } else {
+        vec2 p = samplerTransform(image, current);
+        return sample(image, p);
+    }
+
+}

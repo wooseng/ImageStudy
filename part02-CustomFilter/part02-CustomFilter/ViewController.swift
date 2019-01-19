@@ -20,7 +20,7 @@ class ViewController: BaseViewController {
     
     private let tableView = UITableView.init(frame: .zero, style: .grouped)
     
-    private var dataSource: [FilterType] = [.mirror, .vignette, .pixellate]
+    private var dataSource: [FilterType] = [.mirror, .vignette, .pixellate, .mosaic]
 }
 
 extension ViewController {
@@ -79,6 +79,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             navigationController?.pushViewController(VignetteFilterViewController(), animated: true)
         case .pixellate:
             navigationController?.pushViewController(PixellateFilterViewController(), animated: true)
+        case .mosaic:
+            navigationController?.pushViewController(MosaicFilterViewController(), animated: true)
         }
     }
 }
@@ -87,4 +89,5 @@ fileprivate enum FilterType: String {
     case mirror = "图像翻转，可沿X轴、Y轴、中心点翻转"
     case vignette = "图像光晕"
     case pixellate = "像素化"
+    case mosaic = "马赛克"
 }

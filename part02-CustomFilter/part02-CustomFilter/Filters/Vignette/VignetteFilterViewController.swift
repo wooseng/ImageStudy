@@ -51,7 +51,7 @@ extension VignetteFilterViewController {
     
     @objc private func radiusSliderDidValueChange() {
         radius = radiusSlider.maximumValue - radiusSlider.value
-        showFilterImage()
+        startDealImage(isChainEnable: false)
     }
     
 }

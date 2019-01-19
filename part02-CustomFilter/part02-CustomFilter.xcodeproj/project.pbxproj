@@ -21,6 +21,9 @@
 		4CC5B6A021F2C37200E7F112 /* PixellateFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5B69F21F2C37200E7F112 /* PixellateFilterViewController.swift */; };
 		4CC5B6A221F2C37E00E7F112 /* PixellateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5B6A121F2C37E00E7F112 /* PixellateFilter.swift */; };
 		4CC5B6A421F2CBA400E7F112 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5B6A321F2CBA400E7F112 /* BaseViewController.swift */; };
+		4CC5B6A721F2E59800E7F112 /* Mosaic.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5B6A621F2E59800E7F112 /* Mosaic.cikernel */; };
+		4CC5B6A921F2E5AA00E7F112 /* MosaicFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5B6A821F2E5AA00E7F112 /* MosaicFilter.swift */; };
+		4CC5B6AB21F2E5BA00E7F112 /* MosaicFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5B6AA21F2E5BA00E7F112 /* MosaicFilterViewController.swift */; };
 		4CCF4F2E21F2217B00077CA0 /* VignetteFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF4F2D21F2217B00077CA0 /* VignetteFilter.swift */; };
 		4CCF4F3021F221C300077CA0 /* VignetteFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF4F2F21F221C300077CA0 /* VignetteFilterViewController.swift */; };
 		4CCF4F3221F221E800077CA0 /* Vignette.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 4CCF4F3121F221E800077CA0 /* Vignette.cikernel */; };
@@ -44,6 +47,9 @@
 		4CC5B69F21F2C37200E7F112 /* PixellateFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixellateFilterViewController.swift; sourceTree = "<group>"; };
 		4CC5B6A121F2C37E00E7F112 /* PixellateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixellateFilter.swift; sourceTree = "<group>"; };
 		4CC5B6A321F2CBA400E7F112 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4CC5B6A621F2E59800E7F112 /* Mosaic.cikernel */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mosaic.cikernel; sourceTree = "<group>"; };
+		4CC5B6A821F2E5AA00E7F112 /* MosaicFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicFilter.swift; sourceTree = "<group>"; };
+		4CC5B6AA21F2E5BA00E7F112 /* MosaicFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicFilterViewController.swift; sourceTree = "<group>"; };
 		4CCF4F2D21F2217B00077CA0 /* VignetteFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VignetteFilter.swift; sourceTree = "<group>"; };
 		4CCF4F2F21F221C300077CA0 /* VignetteFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VignetteFilterViewController.swift; sourceTree = "<group>"; };
 		4CCF4F3121F221E800077CA0 /* Vignette.cikernel */ = {isa = PBXFileReference; lastKnownFileType = text; path = Vignette.cikernel; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 		4C46B47C21EF0FA600CE8638 /* part02-CustomFilter */ = {
 			isa = PBXGroup;
 			children = (
+				4CC5B6AC21F2F4FA00E7F112 /* Extension */,
 				4CC5B6A321F2CBA400E7F112 /* BaseViewController.swift */,
 				4C46B48F21EF161200CE8638 /* Filters */,
 				4C46B47D21EF0FA600CE8638 /* AppDelegate.swift */,
@@ -113,6 +120,7 @@
 				4C46B49421EF20FB00CE8638 /* Mirror */,
 				4CCF4F2C21F2214D00077CA0 /* Vignette */,
 				4CC5B69C21F2C33700E7F112 /* Pixellate */,
+				4CC5B6A521F2E56700E7F112 /* Mosaic */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -135,6 +143,23 @@
 				4CC5B69F21F2C37200E7F112 /* PixellateFilterViewController.swift */,
 			);
 			path = Pixellate;
+			sourceTree = "<group>";
+		};
+		4CC5B6A521F2E56700E7F112 /* Mosaic */ = {
+			isa = PBXGroup;
+			children = (
+				4CC5B6A621F2E59800E7F112 /* Mosaic.cikernel */,
+				4CC5B6A821F2E5AA00E7F112 /* MosaicFilter.swift */,
+				4CC5B6AA21F2E5BA00E7F112 /* MosaicFilterViewController.swift */,
+			);
+			path = Mosaic;
+			sourceTree = "<group>";
+		};
+		4CC5B6AC21F2F4FA00E7F112 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		4CCF4F2B21F220A500077CA0 /* Base */ = {
@@ -228,6 +253,7 @@
 				4C46B48821EF0FA700CE8638 /* LaunchScreen.storyboard in Resources */,
 				4C46B48521EF0FA700CE8638 /* Assets.xcassets in Resources */,
 				4CC5B69E21F2C35700E7F112 /* Pixellate.cikernel in Resources */,
+				4CC5B6A721F2E59800E7F112 /* Mosaic.cikernel in Resources */,
 				4C46B49121EF162D00CE8638 /* Mirror.cikernel in Resources */,
 				4C46B48321EF0FA600CE8638 /* Main.storyboard in Resources */,
 			);
@@ -282,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CCF4F3021F221C300077CA0 /* VignetteFilterViewController.swift in Sources */,
+				4CC5B6AB21F2E5BA00E7F112 /* MosaicFilterViewController.swift in Sources */,
 				4C46B48021EF0FA600CE8638 /* ViewController.swift in Sources */,
 				4CC5B6A421F2CBA400E7F112 /* BaseViewController.swift in Sources */,
 				4CC5B6A221F2C37E00E7F112 /* PixellateFilter.swift in Sources */,
@@ -292,6 +319,7 @@
 				4C46B49621EF213800CE8638 /* FilterViewController.swift in Sources */,
 				4C46B47E21EF0FA600CE8638 /* AppDelegate.swift in Sources */,
 				4CC5B6A021F2C37200E7F112 /* PixellateFilterViewController.swift in Sources */,
+				4CC5B6A921F2E5AA00E7F112 /* MosaicFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
