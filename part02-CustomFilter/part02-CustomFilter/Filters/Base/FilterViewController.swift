@@ -8,11 +8,10 @@
 
 import UIKit
 
-class FilterViewController: UIViewController {
+class FilterViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
         addSwitchButton()
         setSourceImageView()
         setTargetImageView()
@@ -20,6 +19,7 @@ class FilterViewController: UIViewController {
         showFilterImage()
     }
     
+    //MARK: - public
     /**
      对图片进行滤镜处理的方法
      */
@@ -29,11 +29,11 @@ class FilterViewController: UIViewController {
     
     public private(set) var sourceImage: UIImage?
     
+    //MARK: - private
     private let sourceImageView = UIImageView.init()
     private let targetImageView = UIImageView.init()
     private let statueLabel = UILabel.init()
     private let switchButton = UIButton.init()
-    
     private let context = CIContext.init(options: nil)
     
     private var isShowTarget = false {
@@ -46,6 +46,7 @@ class FilterViewController: UIViewController {
 }
 
 
+//MARK: - public
 extension FilterViewController {
     
     public func showFilterImage() {
@@ -58,6 +59,10 @@ extension FilterViewController {
         let resultImage = UIImage.init(cgImage: cgImage)
         targetImageView.image = resultImage
     }
+}
+
+//MARK: - private
+extension FilterViewController {
     
     private func addSwitchButton() {
         switchButton.setTitle("切换", for: .normal)

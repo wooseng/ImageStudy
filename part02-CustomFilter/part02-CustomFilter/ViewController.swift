@@ -10,18 +10,17 @@ import UIKit
 import SnapKit
 import Hue
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
         title = "自定义滤镜"
         setTableView()
     }
     
     private let tableView = UITableView.init(frame: .zero, style: .grouped)
     
-    private var dataSource: [FilterType] = [.mirror, .vignette]
+    private var dataSource: [FilterType] = [.mirror, .vignette, .pixellate]
 }
 
 extension ViewController {
@@ -78,6 +77,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             navigationController?.pushViewController(MirrorFilterViewController(), animated: true)
         case .vignette:
             navigationController?.pushViewController(VignetteFilterViewController(), animated: true)
+        case .pixellate:
+            navigationController?.pushViewController(PixellateFilterViewController(), animated: true)
         }
     }
 }
@@ -85,4 +86,5 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 fileprivate enum FilterType: String {
     case mirror = "图像翻转，可沿X轴、Y轴、中心点翻转"
     case vignette = "图像光晕"
+    case pixellate = "像素化"
 }

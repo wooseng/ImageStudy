@@ -1,45 +1,37 @@
 //
-//  VignetteFilterViewController.swift
+//  PixellateFilterViewController.swift
 //  part02-CustomFilter
 //
-//  Created by 詹保成 on 2019/1/18.
+//  Created by 詹保成 on 2019/1/19.
 //  Copyright © 2019 残无殇. All rights reserved.
 //
 
 import UIKit
 
-class VignetteFilterViewController: FilterViewController {
+class PixellateFilterViewController: FilterViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setRadiusSlider()
-        title = "图像光晕"
+        title = "像素化"
     }
-
-    private var radius: Float = -1
-    
-    private let filter = VignetteFilter()
+ 
+    private let filter = PixellateFilter()
     
     override func dealImage(_ image: CIImage) -> CIImage? {
         filter.setValue(image, forKey: kCIInputImageKey)
-        if radius < 0 {
-            filter.radius = image.extent.width / 2
-        } else {
-            filter.radius = CGFloat(radius)
-        }
+        filter.radius = radius
         return filter.outputImage
     }
     
+    private var radius: CGFloat = 1
+    
     private let radiusSlider = UISlider.init()
-    
-}
-
-extension VignetteFilterViewController {
-    
+ 
     private func setRadiusSlider() {
         view.addSubview(radiusSlider)
-        radiusSlider.minimumValue = 0
-        radiusSlider.maximumValue = Float(sourceImage?.size.width ?? 100)
+        radiusSlider.minimumValue = 1
+        radiusSlider.maximumValue = 100
         radiusSlider.addTarget(self, action: #selector(radiusSliderDidValueChange), for: .valueChanged)
         radiusSlider.snp.makeConstraints { (maker) in
             maker.left.equalTo(20)
@@ -50,7 +42,7 @@ extension VignetteFilterViewController {
     }
     
     @objc private func radiusSliderDidValueChange() {
-        radius = radiusSlider.maximumValue - radiusSlider.value
+        radius = CGFloat(radiusSlider.value)
         showFilterImage()
     }
     

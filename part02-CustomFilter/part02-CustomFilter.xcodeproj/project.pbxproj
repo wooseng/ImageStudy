@@ -17,6 +17,10 @@
 		4C46B49621EF213800CE8638 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46B49521EF213800CE8638 /* FilterViewController.swift */; };
 		4C46B49821EF21FA00CE8638 /* MirrorFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46B49721EF21FA00CE8638 /* MirrorFilterViewController.swift */; };
 		4C46B49A21EF2DD500CE8638 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46B49921EF2DD500CE8638 /* Filter.swift */; };
+		4CC5B69E21F2C35700E7F112 /* Pixellate.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5B69D21F2C35700E7F112 /* Pixellate.cikernel */; };
+		4CC5B6A021F2C37200E7F112 /* PixellateFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5B69F21F2C37200E7F112 /* PixellateFilterViewController.swift */; };
+		4CC5B6A221F2C37E00E7F112 /* PixellateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5B6A121F2C37E00E7F112 /* PixellateFilter.swift */; };
+		4CC5B6A421F2CBA400E7F112 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5B6A321F2CBA400E7F112 /* BaseViewController.swift */; };
 		4CCF4F2E21F2217B00077CA0 /* VignetteFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF4F2D21F2217B00077CA0 /* VignetteFilter.swift */; };
 		4CCF4F3021F221C300077CA0 /* VignetteFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF4F2F21F221C300077CA0 /* VignetteFilterViewController.swift */; };
 		4CCF4F3221F221E800077CA0 /* Vignette.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 4CCF4F3121F221E800077CA0 /* Vignette.cikernel */; };
@@ -36,6 +40,10 @@
 		4C46B49521EF213800CE8638 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		4C46B49721EF21FA00CE8638 /* MirrorFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorFilterViewController.swift; sourceTree = "<group>"; };
 		4C46B49921EF2DD500CE8638 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		4CC5B69D21F2C35700E7F112 /* Pixellate.cikernel */ = {isa = PBXFileReference; lastKnownFileType = text; path = Pixellate.cikernel; sourceTree = "<group>"; };
+		4CC5B69F21F2C37200E7F112 /* PixellateFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixellateFilterViewController.swift; sourceTree = "<group>"; };
+		4CC5B6A121F2C37E00E7F112 /* PixellateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixellateFilter.swift; sourceTree = "<group>"; };
+		4CC5B6A321F2CBA400E7F112 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4CCF4F2D21F2217B00077CA0 /* VignetteFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VignetteFilter.swift; sourceTree = "<group>"; };
 		4CCF4F2F21F221C300077CA0 /* VignetteFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VignetteFilterViewController.swift; sourceTree = "<group>"; };
 		4CCF4F3121F221E800077CA0 /* Vignette.cikernel */ = {isa = PBXFileReference; lastKnownFileType = text; path = Vignette.cikernel; sourceTree = "<group>"; };
@@ -86,6 +94,7 @@
 		4C46B47C21EF0FA600CE8638 /* part02-CustomFilter */ = {
 			isa = PBXGroup;
 			children = (
+				4CC5B6A321F2CBA400E7F112 /* BaseViewController.swift */,
 				4C46B48F21EF161200CE8638 /* Filters */,
 				4C46B47D21EF0FA600CE8638 /* AppDelegate.swift */,
 				4C46B47F21EF0FA600CE8638 /* ViewController.swift */,
@@ -103,6 +112,7 @@
 				4CCF4F2B21F220A500077CA0 /* Base */,
 				4C46B49421EF20FB00CE8638 /* Mirror */,
 				4CCF4F2C21F2214D00077CA0 /* Vignette */,
+				4CC5B69C21F2C33700E7F112 /* Pixellate */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -115,6 +125,16 @@
 				4C46B49721EF21FA00CE8638 /* MirrorFilterViewController.swift */,
 			);
 			path = Mirror;
+			sourceTree = "<group>";
+		};
+		4CC5B69C21F2C33700E7F112 /* Pixellate */ = {
+			isa = PBXGroup;
+			children = (
+				4CC5B69D21F2C35700E7F112 /* Pixellate.cikernel */,
+				4CC5B6A121F2C37E00E7F112 /* PixellateFilter.swift */,
+				4CC5B69F21F2C37200E7F112 /* PixellateFilterViewController.swift */,
+			);
+			path = Pixellate;
 			sourceTree = "<group>";
 		};
 		4CCF4F2B21F220A500077CA0 /* Base */ = {
@@ -207,6 +227,7 @@
 				4CCF4F3221F221E800077CA0 /* Vignette.cikernel in Resources */,
 				4C46B48821EF0FA700CE8638 /* LaunchScreen.storyboard in Resources */,
 				4C46B48521EF0FA700CE8638 /* Assets.xcassets in Resources */,
+				4CC5B69E21F2C35700E7F112 /* Pixellate.cikernel in Resources */,
 				4C46B49121EF162D00CE8638 /* Mirror.cikernel in Resources */,
 				4C46B48321EF0FA600CE8638 /* Main.storyboard in Resources */,
 			);
@@ -262,12 +283,15 @@
 			files = (
 				4CCF4F3021F221C300077CA0 /* VignetteFilterViewController.swift in Sources */,
 				4C46B48021EF0FA600CE8638 /* ViewController.swift in Sources */,
+				4CC5B6A421F2CBA400E7F112 /* BaseViewController.swift in Sources */,
+				4CC5B6A221F2C37E00E7F112 /* PixellateFilter.swift in Sources */,
 				4C46B49A21EF2DD500CE8638 /* Filter.swift in Sources */,
 				4C46B49321EF16E100CE8638 /* MirrorFilter.swift in Sources */,
 				4CCF4F2E21F2217B00077CA0 /* VignetteFilter.swift in Sources */,
 				4C46B49821EF21FA00CE8638 /* MirrorFilterViewController.swift in Sources */,
 				4C46B49621EF213800CE8638 /* FilterViewController.swift in Sources */,
 				4C46B47E21EF0FA600CE8638 /* AppDelegate.swift in Sources */,
+				4CC5B6A021F2C37200E7F112 /* PixellateFilterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

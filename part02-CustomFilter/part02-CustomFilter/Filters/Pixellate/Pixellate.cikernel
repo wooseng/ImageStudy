@@ -1,0 +1,8 @@
+
+kernel vec2 pixellateKernel(float radius) {
+    vec2 current, center;
+    current = destCoord();
+    center.x = current.x - mod(current.x, radius) + radius;
+    center.y = current.y - mod(current.y, radius) + radius;
+    return center;
+}
