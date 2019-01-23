@@ -1,0 +1,20 @@
+PODS:
+  - Hue (3.0.1)
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - Hue
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Hue
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+
+PODFILE CHECKSUM: 95f7c3ca5bbc205a7cf74b3e6c09cf45efdfbac0
+
+COCOAPODS: 1.5.3
