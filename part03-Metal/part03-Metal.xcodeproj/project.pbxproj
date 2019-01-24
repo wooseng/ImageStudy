@@ -22,6 +22,7 @@
 		4CF66E0821F858BE00E68876 /* ClearScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66E0721F858BE00E68876 /* ClearScreenView.swift */; };
 		4CF66E0B21F96E7400E68876 /* Ext_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66E0A21F96E7400E68876 /* Ext_UIColor.swift */; };
 		4CF66E0D21F9883500E68876 /* Ext_Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66E0C21F9883500E68876 /* Ext_Number.swift */; };
+		4CF66E0F21F9931C00E68876 /* BaseMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66E0E21F9931C00E68876 /* BaseMetalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		4CF66E0721F858BE00E68876 /* ClearScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScreenView.swift; sourceTree = "<group>"; };
 		4CF66E0A21F96E7400E68876 /* Ext_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor.swift; sourceTree = "<group>"; };
 		4CF66E0C21F9883500E68876 /* Ext_Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Number.swift; sourceTree = "<group>"; };
+		4CF66E0E21F9931C00E68876 /* BaseMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMetalView.swift; sourceTree = "<group>"; };
 		60AB6697346FE2F7660FF8B6 /* Pods_part03_MetalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_part03_MetalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB3D9BA13639003C37ABB80 /* Pods-part03-Metal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-part03-Metal.release.xcconfig"; path = "Pods/Target Support Files/Pods-part03-Metal/Pods-part03-Metal.release.xcconfig"; sourceTree = "<group>"; };
 		E2DEBAA66E9764ABD041D528 /* Pods-part03-Metal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-part03-Metal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-part03-Metal/Pods-part03-Metal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				4CF66DFD21F84C3B00E68876 /* BaseViewController.swift */,
 				4CF66DFF21F84CBE00E68876 /* BaseTableViewController.swift */,
 				4CF66E0121F84D3800E68876 /* BaseTableDataSource.swift */,
+				4CF66E0E21F9931C00E68876 /* BaseMetalView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				4CF66DCF21F84A6800E68876 /* AppDelegate.swift in Sources */,
 				4CF66E0821F858BE00E68876 /* ClearScreenView.swift in Sources */,
 				4CF66E0021F84CBE00E68876 /* BaseTableViewController.swift in Sources */,
+				4CF66E0F21F9931C00E68876 /* BaseMetalView.swift in Sources */,
 				4CF66E0621F8541E00E68876 /* ClearScreenViewController.swift in Sources */,
 				4CF66DFE21F84C3B00E68876 /* BaseViewController.swift in Sources */,
 			);

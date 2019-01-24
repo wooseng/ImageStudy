@@ -8,24 +8,7 @@
 
 import UIKit
 
-class ClearScreenView: UIView {
-    
-    public let device = MTLCreateSystemDefaultDevice()
-    
-    var metalLayer: CAMetalLayer {
-        return layer as! CAMetalLayer
-    }
-    
-    override class var layerClass : AnyClass {
-        return CAMetalLayer.self
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if metalLayer.drawableSize != frame.size {
-            metalLayer.drawableSize = frame.size
-        }
-    }
+class ClearScreenView: BaseMetalView {
     
     public func render() {
         guard let drawable = metalLayer.nextDrawable() else {
