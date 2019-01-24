@@ -28,5 +28,9 @@ class BaseMetalView: UIView {
             metalLayer.drawableSize = frame.size
         }
     }
+    
+    public func render() {
+        fatalError("this method must be override")
+    }
 
 }

@@ -10,8 +10,6 @@
 
 import UIKit
 
-
-
 class ClearScreenViewController: BaseViewController {
 
     override func viewDidLoad() {

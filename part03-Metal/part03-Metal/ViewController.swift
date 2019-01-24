@@ -14,6 +14,7 @@ class ViewController: BaseTableViewController {
         super.viewDidLoad()
         title = "Metal"
         dataSource.append(HomeModel(type: .clearScreen))
+        dataSource.append(HomeModel(type: .triangle))
     }
     
     override func didSelected(_ obj: BaseTableDataSource) {
@@ -22,10 +23,16 @@ class ViewController: BaseTableViewController {
         }
         switch obj.type {
         case .clearScreen:
-            navigationController?.pushViewController(ClearScreenViewController(), animated: true)
+            push(ClearScreenViewController())
+        case .triangle:
+            push(TriangleViewController())
         default:
             break
         }
+    }
+    
+    private func push(_ viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }
@@ -43,5 +50,6 @@ fileprivate struct HomeModel: BaseTableDataSource {
 fileprivate enum HomeType: String {
     case none
     case clearScreen = "清屏"
+    case triangle = "三角形"
 }
 

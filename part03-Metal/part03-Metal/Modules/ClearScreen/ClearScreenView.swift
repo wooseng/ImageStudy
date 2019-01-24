@@ -10,18 +10,18 @@ import UIKit
 
 class ClearScreenView: BaseMetalView {
     
-    public func render() {
+    override func render() {
         guard let drawable = metalLayer.nextDrawable() else {
             return
         }
         let desc = MTLRenderPassDescriptor.init()
         let colorAttachment = desc.colorAttachments[0]
-        let color = UIColor.random()
-        colorAttachment?.clearColor = MTLClearColorMake(color.r.double, color.g.double, color.b.double, color.a.double)
+        let c = UIColor.randomValue()
+        colorAttachment?.clearColor = MTLClearColorMake(c.r.double, c.g.double, c.b.double, c.a.double)
         colorAttachment?.texture = drawable.texture
         colorAttachment?.loadAction = .clear
         colorAttachment?.storeAction = .store
-        
+
         let commandQueue = device?.makeCommandQueue()
         let commandBuffer = commandQueue?.makeCommandBuffer()
         let commandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: desc)

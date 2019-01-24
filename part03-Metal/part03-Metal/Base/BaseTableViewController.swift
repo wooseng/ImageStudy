@@ -20,7 +20,7 @@ class BaseTableViewController: BaseViewController {
     public var dataSource = [BaseTableDataSource]()
     
     public func didSelected(_ obj: BaseTableDataSource) {
-        fatalError("this method must be overwrite")
+        fatalError("this method must be override")
     }
 }
 
