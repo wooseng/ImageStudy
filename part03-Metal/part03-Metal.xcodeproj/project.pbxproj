@@ -18,6 +18,10 @@
 		4CF66DFE21F84C3B00E68876 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66DFD21F84C3B00E68876 /* BaseViewController.swift */; };
 		4CF66E0021F84CBE00E68876 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66DFF21F84CBE00E68876 /* BaseTableViewController.swift */; };
 		4CF66E0221F84D3800E68876 /* BaseTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66E0121F84D3800E68876 /* BaseTableDataSource.swift */; };
+		4CF66E0621F8541E00E68876 /* ClearScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66E0521F8541E00E68876 /* ClearScreenViewController.swift */; };
+		4CF66E0821F858BE00E68876 /* ClearScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66E0721F858BE00E68876 /* ClearScreenView.swift */; };
+		4CF66E0B21F96E7400E68876 /* Ext_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66E0A21F96E7400E68876 /* Ext_UIColor.swift */; };
+		4CF66E0D21F9883500E68876 /* Ext_Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66E0C21F9883500E68876 /* Ext_Number.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		4CF66DFD21F84C3B00E68876 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4CF66DFF21F84CBE00E68876 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		4CF66E0121F84D3800E68876 /* BaseTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableDataSource.swift; sourceTree = "<group>"; };
+		4CF66E0521F8541E00E68876 /* ClearScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScreenViewController.swift; sourceTree = "<group>"; };
+		4CF66E0721F858BE00E68876 /* ClearScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScreenView.swift; sourceTree = "<group>"; };
+		4CF66E0A21F96E7400E68876 /* Ext_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor.swift; sourceTree = "<group>"; };
+		4CF66E0C21F9883500E68876 /* Ext_Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Number.swift; sourceTree = "<group>"; };
 		60AB6697346FE2F7660FF8B6 /* Pods_part03_MetalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_part03_MetalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB3D9BA13639003C37ABB80 /* Pods-part03-Metal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-part03-Metal.release.xcconfig"; path = "Pods/Target Support Files/Pods-part03-Metal/Pods-part03-Metal.release.xcconfig"; sourceTree = "<group>"; };
 		E2DEBAA66E9764ABD041D528 /* Pods-part03-Metal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-part03-Metal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-part03-Metal/Pods-part03-Metal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +130,8 @@
 		4CF66DCD21F84A6800E68876 /* part03-Metal */ = {
 			isa = PBXGroup;
 			children = (
+				4CF66E0921F96E6300E68876 /* Extension */,
+				4CF66E0321F853EF00E68876 /* Modules */,
 				4CF66DFC21F84C2A00E68876 /* Base */,
 				4CF66DCE21F84A6800E68876 /* AppDelegate.swift */,
 				4CF66DD021F84A6800E68876 /* ViewController.swift */,
@@ -159,6 +169,32 @@
 				4CF66E0121F84D3800E68876 /* BaseTableDataSource.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		4CF66E0321F853EF00E68876 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4CF66E0421F853FE00E68876 /* ClearScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4CF66E0421F853FE00E68876 /* ClearScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4CF66E0521F8541E00E68876 /* ClearScreenViewController.swift */,
+				4CF66E0721F858BE00E68876 /* ClearScreenView.swift */,
+			);
+			path = ClearScreen;
+			sourceTree = "<group>";
+		};
+		4CF66E0921F96E6300E68876 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4CF66E0A21F96E7400E68876 /* Ext_UIColor.swift */,
+				4CF66E0C21F9883500E68876 /* Ext_Number.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		7B0022B078244C6426D49D64 /* Pods */ = {
@@ -345,9 +381,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF66E0221F84D3800E68876 /* BaseTableDataSource.swift in Sources */,
+				4CF66E0D21F9883500E68876 /* Ext_Number.swift in Sources */,
+				4CF66E0B21F96E7400E68876 /* Ext_UIColor.swift in Sources */,
 				4CF66DD121F84A6800E68876 /* ViewController.swift in Sources */,
 				4CF66DCF21F84A6800E68876 /* AppDelegate.swift in Sources */,
+				4CF66E0821F858BE00E68876 /* ClearScreenView.swift in Sources */,
 				4CF66E0021F84CBE00E68876 /* BaseTableViewController.swift in Sources */,
+				4CF66E0621F8541E00E68876 /* ClearScreenViewController.swift in Sources */,
 				4CF66DFE21F84C3B00E68876 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +567,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T835WRSBN8;
 				INFOPLIST_FILE = "part03-Metal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -534,7 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zbc.part03-Metal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
@@ -547,6 +588,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T835WRSBN8;
 				INFOPLIST_FILE = "part03-Metal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,7 +596,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zbc.part03-Metal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;

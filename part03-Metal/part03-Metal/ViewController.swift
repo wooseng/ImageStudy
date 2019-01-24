@@ -13,10 +13,19 @@ class ViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Metal"
+        dataSource.append(HomeModel(type: .clearScreen))
     }
     
     override func didSelected(_ obj: BaseTableDataSource) {
-        
+        guard let obj = obj as? HomeModel else {
+            return
+        }
+        switch obj.type {
+        case .clearScreen:
+            navigationController?.pushViewController(ClearScreenViewController(), animated: true)
+        default:
+            break
+        }
     }
     
 }
@@ -33,5 +42,6 @@ fileprivate struct HomeModel: BaseTableDataSource {
 
 fileprivate enum HomeType: String {
     case none
+    case clearScreen = "清屏"
 }
 
