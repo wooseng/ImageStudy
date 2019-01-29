@@ -23,6 +23,7 @@ class TriangleView: BaseMetalView {
     }
 
     private var pipelineStatus: MTLRenderPipelineState?
+    private var vertexBuffer: MTLBuffer?
     
     public func render(peak1: PeakPosition, peak2: PeakPosition, peak3: PeakPosition) {
         guard let drawable = metalLayer.nextDrawable(),
@@ -58,16 +59,22 @@ class TriangleView: BaseMetalView {
         if let status = pipelineStatus {
             commandEncoder?.setRenderPipelineState(status)
         }
-        let vertices = [TriangleVertex(position: position(in: peak1), color: randomColor()),
-                        TriangleVertex(position: position(in: peak2), color: randomColor()),
-                        TriangleVertex(position: position(in: peak3), color: randomColor())]
-        let length = MemoryLayout<TriangleVertex>.size * 3
-        commandEncoder?.setVertexBytes(vertices, length: length, index: 0)
+        setupBuffer(peak1: peak1, peak2: peak2, peak3: peak3)
+        commandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         commandEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3)
         
         commandEncoder?.endEncoding()
         commandBuffer?.present(drawable)
         commandBuffer?.commit()
+    }
+    
+    
+    private func setupBuffer(peak1: PeakPosition, peak2: PeakPosition, peak3: PeakPosition) {
+        let vertices = [TriangleVertex(position: position(in: peak1), color: randomColor()),
+                        TriangleVertex(position: position(in: peak2), color: randomColor()),
+                        TriangleVertex(position: position(in: peak3), color: randomColor())]
+        let length = MemoryLayout<TriangleVertex>.size * 3
+        vertexBuffer = device?.makeBuffer(bytes: vertices, length: length, options: .cpuCacheModeWriteCombined)
     }
     
 }
