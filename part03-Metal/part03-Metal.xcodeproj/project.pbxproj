@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3991DED376F022896D81F6E2 /* Pods_part03_Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F838653E00D262EB24DEAFCD /* Pods_part03_Metal.framework */; };
+		4C1A9E0F21FFF804000F00DF /* ImageRender.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A9E0E21FFF804000F00DF /* ImageRender.metal */; };
+		4CF0EB4021FDD65F0021DD46 /* ImageRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0EB3F21FDD65F0021DD46 /* ImageRenderViewController.swift */; };
+		4CF0EB4221FDD6CF0021DD46 /* ImageRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0EB4121FDD6CF0021DD46 /* ImageRenderView.swift */; };
+		4CF0EB4421FDD7830021DD46 /* Ext_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0EB4321FDD7830021DD46 /* Ext_UIImage.swift */; };
 		4CF66DCF21F84A6800E68876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66DCE21F84A6800E68876 /* AppDelegate.swift */; };
 		4CF66DD121F84A6800E68876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF66DD021F84A6800E68876 /* ViewController.swift */; };
 		4CF66DD421F84A6800E68876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF66DD221F84A6800E68876 /* Main.storyboard */; };
@@ -46,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C1A9E0D21FFF71A000F00DF /* ImageRenderHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageRenderHeaders.h; sourceTree = "<group>"; };
+		4C1A9E0E21FFF804000F00DF /* ImageRender.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ImageRender.metal; sourceTree = "<group>"; };
+		4CF0EB3F21FDD65F0021DD46 /* ImageRenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRenderViewController.swift; sourceTree = "<group>"; };
+		4CF0EB4121FDD6CF0021DD46 /* ImageRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRenderView.swift; sourceTree = "<group>"; };
+		4CF0EB4321FDD7830021DD46 /* Ext_UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIImage.swift; sourceTree = "<group>"; };
 		4CF66DCB21F84A6800E68876 /* part03-Metal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "part03-Metal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF66DCE21F84A6800E68876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF66DD021F84A6800E68876 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +122,17 @@
 				60AB6697346FE2F7660FF8B6 /* Pods_part03_MetalUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CF0EB3E21FDD6360021DD46 /* ImageRender */ = {
+			isa = PBXGroup;
+			children = (
+				4CF0EB3F21FDD65F0021DD46 /* ImageRenderViewController.swift */,
+				4CF0EB4121FDD6CF0021DD46 /* ImageRenderView.swift */,
+				4C1A9E0E21FFF804000F00DF /* ImageRender.metal */,
+				4C1A9E0D21FFF71A000F00DF /* ImageRenderHeaders.h */,
+			);
+			path = ImageRender;
 			sourceTree = "<group>";
 		};
 		4CF66DC221F84A6800E68876 = {
@@ -186,6 +206,7 @@
 		4CF66E0321F853EF00E68876 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4CF0EB3E21FDD6360021DD46 /* ImageRender */,
 				4CF66E1021F9943D00E68876 /* Triangle */,
 				4CF66E0421F853FE00E68876 /* ClearScreen */,
 			);
@@ -206,6 +227,7 @@
 			children = (
 				4CF66E0A21F96E7400E68876 /* Ext_UIColor.swift */,
 				4CF66E0C21F9883500E68876 /* Ext_Number.swift */,
+				4CF0EB4321FDD7830021DD46 /* Ext_UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -405,6 +427,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1A9E0F21FFF804000F00DF /* ImageRender.metal in Sources */,
+				4CF0EB4221FDD6CF0021DD46 /* ImageRenderView.swift in Sources */,
 				4CF66E1221F9948F00E68876 /* TriangleViewController.swift in Sources */,
 				4CF66E0221F84D3800E68876 /* BaseTableDataSource.swift in Sources */,
 				4CF66E0D21F9883500E68876 /* Ext_Number.swift in Sources */,
@@ -413,9 +437,11 @@
 				4CF66DCF21F84A6800E68876 /* AppDelegate.swift in Sources */,
 				4CF66E0821F858BE00E68876 /* ClearScreenView.swift in Sources */,
 				4CF66E0021F84CBE00E68876 /* BaseTableViewController.swift in Sources */,
+				4CF0EB4021FDD65F0021DD46 /* ImageRenderViewController.swift in Sources */,
 				4CF66E0F21F9931C00E68876 /* BaseMetalView.swift in Sources */,
 				4CF66E0621F8541E00E68876 /* ClearScreenViewController.swift in Sources */,
 				4CF66E1421F994B900E68876 /* TriangleView.swift in Sources */,
+				4CF0EB4421FDD7830021DD46 /* Ext_UIImage.swift in Sources */,
 				4CF66E1621F9A16A00E68876 /* Triangle.metal in Sources */,
 				4CF66DFE21F84C3B00E68876 /* BaseViewController.swift in Sources */,
 			);

@@ -15,6 +15,7 @@ class ViewController: BaseTableViewController {
         title = "Metal"
         dataSource.append(HomeModel(type: .clearScreen))
         dataSource.append(HomeModel(type: .triangle))
+        dataSource.append(HomeModel(type: .imageRender))
     }
     
     override func didSelected(_ obj: BaseTableDataSource) {
@@ -26,7 +27,9 @@ class ViewController: BaseTableViewController {
             push(ClearScreenViewController())
         case .triangle:
             push(TriangleViewController())
-        default:
+        case .imageRender:
+            push(ImageRenderViewController())
+        case .none:
             break
         }
     }
@@ -51,5 +54,6 @@ fileprivate enum HomeType: String {
     case none
     case clearScreen = "清屏"
     case triangle = "三角形"
+    case imageRender = "图形渲染"
 }
 
